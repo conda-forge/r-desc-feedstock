@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: desc_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/desc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/desc/desc_{{ version }}.tar.gz
   sha256: be80e448daf804e339a028288afa5be3d0f5b897f611ccd87de1243a94df84eb
 
 build:
-  noarch: generic
   merge_build_host: true  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -47,16 +46,10 @@ about:
   license: MIT
   summary: Tools to read, write, create, and manipulate DESCRIPTION files. It is intended for packages that create or manipulate other packages.
   license_family: MIT
-
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
     - LICENSE
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
