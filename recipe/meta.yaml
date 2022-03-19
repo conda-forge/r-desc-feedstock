@@ -1,4 +1,4 @@
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/desc_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/desc/desc_{{ version }}.tar.gz
-  sha256: 8220e4c706449b8121b822e70b1414f391ef419aed574836a234c63b83e5d649
+  sha256: 8f9ebb51eccf925b2e76bc65ecf495e8f3882b8c0053023f396622f0402d6f54
 
 build:
   merge_build_host: true  # [win]
@@ -23,17 +23,16 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-r6
-    - r-assertthat
-    - r-crayon
+    - r-cli
     - r-rprojroot
   run:
     - r-base
     - r-r6
-    - r-assertthat
-    - r-crayon
+    - r-cli
     - r-rprojroot
 
 test:
