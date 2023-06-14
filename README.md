@@ -1,11 +1,11 @@
-About r-desc
-============
+About r-desc-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-desc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/r-lib/desc#readme
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-desc-feedstock/blob/main/LICENSE.txt)
 
 Summary: Tools to read, write, create, and manipulate DESCRIPTION files. It is intended for packages that create or manipulate other packages.
 
